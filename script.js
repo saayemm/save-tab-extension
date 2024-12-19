@@ -1,7 +1,8 @@
 const inputBtn = document.querySelector("#input-btn");
 const inputEl = document.querySelector("#input-el");
 let ulEl = document.querySelector("#ul-el");
-const deleteBtn = document.querySelector("#delete-btn")
+const deleteBtn = document.querySelector("#delete-btn");
+const tabBtn = document.querySelector("#tab-btn");
 
 let  myLead = []
 
@@ -12,6 +13,17 @@ if(leadFromLocalStroge){
     render(myLead)
 }
 
+
+tabBtn.addEventListener("click", function(){
+    chrome.tabs.query({active: true, currentWindow: true}, function(tabs){
+        console.log(tabs);
+        myLead.push(tab[0].url)
+        localStorage.setItem("myLead", JSON.stringify(myLead))
+        render(myLead)
+    })
+
+    
+})
 
 function render (lead){
     let listItems = "";
@@ -24,7 +36,7 @@ function render (lead){
     }
     ulEl.innerHTML = listItems;
 }
-deleteBtn.addEventListener("dblclick", function(){
+deleteBtn.addEventListener("click", function(){
     localStorage.clear()
     myLead = []
     render(myLead)

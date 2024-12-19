@@ -24,10 +24,8 @@ button{
 }
 
 #delete-btn{
-    background-color: transparent;
-    color: #5f9341;
-    border: 2px solid #5f9341;
-    padding: 8px 24px;
+    background-color: rgb(243, 46, 46);
+    color: #ffffff;
 }
 
 li{

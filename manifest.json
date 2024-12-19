@@ -4,5 +4,8 @@
     "name": "save URL",
     "action": {
         "default_popup": "index.html"
-    }
+    },
+    "permissions": [
+        "tabs"
+    ]
 }
