@@ -16,8 +16,7 @@ if(leadFromLocalStroge){
 
 tabBtn.addEventListener("click", function(){
     chrome.tabs.query({active: true, currentWindow: true}, function(tabs){
-        console.log(tabs);
-        myLead.push(tab[0].url)
+        myLead.push(tabs[0].url)
         localStorage.setItem("myLead", JSON.stringify(myLead))
         render(myLead)
     })
